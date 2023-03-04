@@ -1,8 +1,20 @@
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import './bootstrap.min.css';
+import HomeScreen from './screens/HomeScreen';
 
 function App() {
   return (
     <>
-      This is Shopee
+      <Header />
+      <main className='py-3'>
+        <Container>
+          <HomeScreen/>
+        </Container>
+      </main>
+      <Footer />
     </>
   );
 }

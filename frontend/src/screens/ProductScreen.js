@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import Rating from '../components/Rating';
-import products from '../products';
+import axios from 'axios';
 
-const ProductScreen = ({ match }) => {
+const ProductScreen = () => {
   const { id } = useParams();
-  const product = products.find((p) => p._id === id);
+  // const product = products.find((p) => p._id === id);
+  const [product, setProduct] = useState([]);
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/products/${id}`);
+      setProduct(data);
+    };
+    fetchProduct();
+  }, [id]);
   return (
     <>
-      <Link className="btn btn-light my-3" to="/">
+      <Link
+        className="btn btn-light my-3 py-2 border border-dark rounded"
+        to="/"
+      >
         Go Back
       </Link>
       <Row>
@@ -27,42 +38,41 @@ const ProductScreen = ({ match }) => {
                 text={`${product.numReviews} reviews`}
               />
             </ListGroup.Item>
-            <ListGroup.Item>
-Price: ${product.price}
-            </ListGroup.Item>
-            <ListGroup.Item>
-                Description: {product.description}
-            </ListGroup.Item>
+            <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+            <ListGroup.Item>Description: {product.description}</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
-            <Card>
-                <ListGroup variant='flush'>
-                    <ListGroup.Item>
-                        <Row>
-                            <Col>
-                                Price:
-                            </Col>
-                            <Col>
-                                <p className='fw-bold'>${product.price}</p>
-                            </Col>
-                        </Row>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                        <Row>
-                            <Col>
-                                Status:
-                            </Col>
-                            <Col>
-                                {product.countInStock>0 ? "In Stock" : "Out Of Stock"}
-                            </Col>
-                        </Row>
-                    </ListGroup.Item>
-                    <ListGroup.Item >
-                       <Button className='btn-block' type='button' disabled={product.countInStock===0}>ADD TO CART</Button>
-                    </ListGroup.Item>
-                </ListGroup>
-            </Card>
+          <Card>
+            <ListGroup variant="flush">
+              <ListGroup.Item>
+                <Row>
+                  <Col>Price:</Col>
+                  <Col>
+                    <p className="fw-bold">${product.price}</p>
+                  </Col>
+                </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Row>
+                  <Col>Status:</Col>
+                  <Col>
+                    {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                  </Col>
+                </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Button
+                  className="btn-block "
+                  style={{ backgroundColor: '#17141F' }}
+                  type="button"
+                  disabled={product.countInStock === 0}
+                >
+                  ADD TO CART
+                </Button>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
         </Col>
       </Row>
     </>

@@ -133,6 +133,9 @@ h6 {
   line-height: 1.2;
   color: #1a1a1a;
 }
+.black{
+  color: #1a1a1a
+}
 .h1,
 h1 {
   font-size: calc(1.325rem + 0.9vw);

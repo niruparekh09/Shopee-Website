@@ -24,6 +24,7 @@ const LoginScreen = () => {
     if (userInfo) {
       navigate(redirect);
     }
+   
   }, [navigate, userInfo, redirect]);
 
   const submitHandler = (e) => {

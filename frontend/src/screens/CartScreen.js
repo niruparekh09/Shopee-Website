@@ -15,7 +15,7 @@ import { addToCart, removeFromCart } from '../actions/cartActions';
 
 const CartScreen = () => {
   const location = useLocation();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const { id } = useParams();
   const productId = id;
 
@@ -37,7 +37,7 @@ const CartScreen = () => {
   };
 
   const checkoutHandler = () => {
-    history('/login?redirect=shipping');
+    navigate('/shipping');
   };
 
   return (
@@ -97,7 +97,7 @@ const CartScreen = () => {
           <ListGroup variant="flush">
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                Subtotal ({cartItems.reduce((acc, item) => Number(acc)+ Number(item.qty), 0)})
                 items
               </h2>
               $

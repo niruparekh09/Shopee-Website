@@ -1,7 +1,7 @@
 const products = [
   {
-    name: 'Airpods Wireless Bluetooth Headphones',
-    image: '/images/airpods.jpg',
+    name: 'Apple Airpods Pro TWS Earphones',
+    image: '/images/airpodspro.jpg',
     description:
       'Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working',
     brand: 'Apple',
@@ -12,13 +12,13 @@ const products = [
     numReviews: 12,
   },
   {
-    name: 'iPhone 11 Pro 256GB Memory',
-    image: '/images/phone.jpg',
+    name: 'iPhone 14 Pro Max 256GB Memory',
+    image: '/images/phonenew.jpg',
     description:
-      'Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life',
+      'Introducing the iPhone 14 Pro Max. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life',
     brand: 'Apple',
     category: 'Electronics',
-    price: 599.99,
+    price: 1199.99,
     countInStock: 7,
     rating: 4.0,
     numReviews: 8,
@@ -36,20 +36,20 @@ const products = [
     numReviews: 12,
   },
   {
-    name: 'Sony Playstation 4 Pro White Version',
-    image: '/images/playstation.jpg',
+    name: 'Sony Playstation 5 Matt Blue Edition',
+    image: '/images/ps5.jpg',
     description:
       'The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music',
     brand: 'Sony',
     category: 'Electronics',
-    price: 399.99,
+    price: 499.99,
     countInStock: 11,
     rating: 5,
-    numReviews: 12,
+    numReviews: 10,
   },
   {
     name: 'Logitech G-Series Gaming Mouse',
-    image: '/images/mouse.jpg',
+    image: '/images/logitech.jpg',
     description:
       'Get a better handle on your games with this Logitech LIGHTSYNC gaming mouse. The six programmable buttons allow customization for a smooth playing experience',
     brand: 'Logitech',
@@ -60,16 +60,40 @@ const products = [
     numReviews: 10,
   },
   {
-    name: 'Amazon Echo Dot 3rd Generation',
+    name: 'Amazon Echo Plus Smart Bluetooth Speaker',
     image: '/images/alexa.jpg',
     description:
-      'Meet Echo Dot - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space',
+      'Meet Echo Plus - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space',
     brand: 'Amazon',
     category: 'Electronics',
-    price: 29.99,
-    countInStock: 0,
+    price: 49.99,
+    countInStock: 6,
     rating: 4,
     numReviews: 12,
+  },
+  {
+    name: 'Logitech G29 - RACING WHEEL FOR PS AND PC',
+    image: '/images/G29.jpg',
+    description:
+      'For those who like to play fast-paced racing games and want to experience realistic handling and controls while playing these games, the Logitech G29 Driving Force Racing Wheel is a great choice for PC and console gaming.',
+    brand: 'Logitech',
+    category: 'Electronics',
+    price: 29.99,
+    countInStock: 9,
+    rating: 4,
+    numReviews: 11,
+  },
+  {
+    name: 'WH-CH710N Wireless Noise Cancelling Headphones',
+    image: '/images/WH-CH710N.jpg',
+    description:
+      'The WH-CH710N Wireless Noise Cancelling Headphones offer powerful, distraction-free listening wherever you are. With Noise Cancelling via Dual Noise Sensor Technology, as well as 35 hours of wireless playback.',
+    brand: 'Amazon',
+    category: 'Electronics',
+    price: 229.99,
+    countInStock: 7,
+    rating: 4.5,
+    numReviews: 15,
   },
 ];
 
